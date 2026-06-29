@@ -1,0 +1,9 @@
+[submodule "src/tta3dcache/cdViews"]
+	path = src/tta3dcache/cdViews
+	url = https://github.com/chrisindris/cdViews.git
+[submodule "src/tta3dcache/TDA"]
+	path = src/tta3dcache/TDA
+	url = https://github.com/chrisindris/TDA.git
+[submodule "src/tta3dcache/Uni-Adapter"]
+	path = src/tta3dcache/Uni-Adapter
+	url = https://github.com/chrisindris/Uni-Adapter.git

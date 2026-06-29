@@ -21,11 +21,22 @@ TTA3DCache/
 ## Quick start
 
 ```bash
+git submodule update --init --recursive
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python scripts/train.py --help
 ```
+
+## Submodules
+
+This repo expects the public forks to live under `src/tta3dcache/`:
+
+- `src/tta3dcache/cdViews`
+- `src/tta3dcache/TDA`
+- `src/tta3dcache/Uni-Adapter`
+
+If you clone without `--recursive`, run `git submodule update --init --recursive` before installing dependencies.
 
 ## Next steps
 
