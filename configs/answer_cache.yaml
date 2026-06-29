@@ -1,0 +1,57 @@
+seed: 42
+device: cpu
+dataset:
+  name: mock
+  split: test
+  limit: null
+cdviews:
+  views_per_set: 4
+  preserve_original_prompt: true
+candidate_sets:
+  num_sets: 5
+  diversity_lambda: 0.5
+  include_random_control: false
+  max_ranked_pool: 16
+answers:
+  equivalence_mode: exact_normalized
+  embedding_threshold: 0.85
+  canonicalize_spatial_terms: true
+features:
+  enabled: false
+  pooling: weighted_mean
+  normalize: true
+confidence:
+  source_priority: [model_probability, agreement, self_report]
+  minimum_cache_confidence: 0.35
+cache:
+  enabled: true
+  max_size: 32
+  pruning: confidence_diversity
+  temperature: 1.0
+  similarity_temperature: 1.0
+  similarity_threshold: 0.75
+  use_negative_cache: false
+prototype:
+  enabled: false
+  momentum: 0.9
+  minimum_support: 2
+weights:
+  confidence_exponent: 1.0
+  diversity_exponent: 1.0
+  criticality_exponent: 1.0
+  overlap_exponent: 1.0
+  instability_exponent: 1.0
+fusion:
+  lambda_base: 1.0
+  lambda_cache: 1.0
+  lambda_proto: 0.0
+  lambda_instability: 0.25
+  fallback_entropy_threshold: 0.8
+gating:
+  enabled: true
+  agreement_threshold: 0.67
+  entropy_threshold: 0.75
+  initial_num_sets: 3
+logging:
+  output_dir: outputs/answer_cache
+  save_features: false
